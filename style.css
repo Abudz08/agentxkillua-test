@@ -14,14 +14,13 @@ img {
 
 html {
     scroll-behavior: smooth;
-    font-size: var(--FS);
 }
 
 :root {
     /* FONTS */
     --FF-BODY: monospace;
     --FF-HEADER: Impact;
-    --FS: clamp(0.5em, 3.1vw, 0.9em);
+    --FS: clamp(0.5rem, 3.1vw, 1.6rem);
     
     /* COLOR */
     --BG-DARK: #333;
@@ -58,6 +57,7 @@ html {
 /* || LAYOUT */
 body {
     font-family: var(--FF-BODY);
+    font-size: var(--FS);
     min-height: 100vh;
     display: grid;
 
@@ -79,7 +79,7 @@ body {
     border-right: var(--BORDER);
     box-shadow: 0 0 10px var(--BG-DARK);
 
-    max-width: 430px;
+    max-width: 768px;
     
 }
 
@@ -115,26 +115,30 @@ h1, h2 {
 
 .header__logo {
     /* resizing logo */
-    width: 15vw;
-    max-width: 100px;
-
+    width: 10vh;
 
     /* making logo a circle */
     border: var(--BORDER);
     border-radius: var(--BORDER-CIRCLE);
 }
 
-.header__h1 {
-    font-size: 180%;
+.header__title-logo {
+    /* resizing logo */
+    width: 15vh;
 }
+
+.header__h1 {
+    font-size: 160%;
+}
+
 .header__button {
     /* making the button transparent */
     background-color: transparent;  
     border: none;
 
     /* giving the button dimension */
-    width: 30px;
-    height: 30px;
+    width: 8vh;
+    height: 8vh;
 
     /* making the button a container */
     display: flex;
@@ -150,9 +154,9 @@ h1, h2 {
     background-color: var(--FONT-LIGHT);
 
     /* giving the icon dimension */
-    width: 2em;
-    height: 0.2em;
-    border-radius: 0.2em;
+    width: 8vh;
+    height: 0.5vh;
+    border-radius: 5px;
 
     /* giving the icon fixed position inside the button */
     position: absolute;
@@ -170,13 +174,13 @@ h1, h2 {
 .header__icon::before {
     /* changing the position of before character */
     /* transform: translate(x-offset, y-offset); */
-    transform: translate(-1em, -0.5em);
+    transform: translate(-4vh, -1.5vh);
 }
 
 .header__icon::after {
     /* changing the position of before character */
     /* transform: translate(x-offset, y-offset); */
-    transform: translate(-1em, 0.5em);
+    transform: translate(-4vh, 1.5vh);
 }
 
 :is(header:hover, header:focus-within) .header__icon {
@@ -189,16 +193,14 @@ h1, h2 {
 
 :is(header:hover, header:focus-within) .header__icon::before {
     /* making the top line rotate 45deg CW */
-    width: 1em;
-    height: 0.1em;
-    transform: translateX(-0.5em) rotate(45deg);
+    width: 4vw;
+    transform: translateX(-7.5px) rotate(45deg);
 }
 
 :is(header:hover, header:focus-within) .header__icon::after {
     /* making the top line rotate 45deg CW */
-    width: 1em;
-    height: 0.1em;
-    transform: translateX(-0.5em) rotate(-45deg);
+    width: 4vw;
+    transform: translateX(-7.5px) rotate(-45deg);
 }
 
 .header__nav {
@@ -307,7 +309,7 @@ h1, h2 {
     text-shadow: var(--FONT-SHADOW-DARK);
     text-transform: uppercase;
 
-    font-size: 250%;    
+    font-size: 250%;
 
 }
 
@@ -317,8 +319,8 @@ h1, h2 {
     font-weight: bold;
     text-align: center;
     padding: 0.1em;
-    width: 25vw;
-    max-width: 130px;
+    width: 30vw;
+    min-width: 130px;
     margin: auto;
     margin-top: 0.5em;
 }
@@ -326,7 +328,6 @@ h1, h2 {
 /* || INTRODUCTON */
 .main__introduction-image {
     width: 30vw;
-    max-width: 150px;
     height: auto;
 
     /* this will let the text to be inline with the image */
@@ -344,17 +345,15 @@ h1, h2 {
 
 /* || BIOGRAPHY */
 .main__biography {
-    background-image: url(" killua\ wallpaper.png");
+    background-image: url("./Images/killua\ wallpaper.png");
     background-size: cover;
-   
     padding: 0.5em;
     box-shadow: var(--FONT-SHADOW-LIGHT);
     border-radius: var(--BORDER-RADIUS);
 
     /* this will give the biography a card looking */
-    width: 60vw;
-    max-width: 305px;
-    height: auto;
+    width: 250px;
+    font-size: 0.8rem;
     margin: auto;
 }
 
@@ -362,17 +361,10 @@ h1, h2 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-bottom: 0.5em;
-    gap: 0.5em;
-}
-
-.bio__h2 {
-    color: aquamarine;
 }
 
 .main__biography-profile-pic img {
-    width: 20vw;
-    max-width: 80px;
+    width: 70px;
     height: auto;
     border-radius: var(--BORDER-CIRCLE);
     box-shadow: var(--FONT-SHADOW-LIGHT);
@@ -381,6 +373,8 @@ h1, h2 {
 .main__biography-greet .main__h2 {
     color: var(--FONT-LIGHT);
     text-shadow: var(--BOX-SHADOW-DARK);
+    font-size: 2.1rem;
+    text-align: center;
 }
 
 .biography__table {
@@ -434,6 +428,8 @@ h1, h2 {
     background-color: rgba(0, 0, 0, 0.3);
     text-shadow: 2px 2px 5px #000;
     border-radius: 3px;
+    margin: auto;
+    
 }
 
 /* || SKILLS */
