@@ -553,3 +553,30 @@ h1, h2 {
     color: var(--FONT-LIGHT);
     font-weight: bold;
 }
+
+.java {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.javascript {
+    width: 100px;
+    height: 100px;
+    background-color: #333;
+    border: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.5em;
+
+    border-radius: 1em;
+}
+
+.javascript img {
+    width: 100px;
+    height: 100px;
+    border-radius: 1em;
+}
